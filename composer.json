@@ -1,5 +1,5 @@
 {
-    "name": "yiisoft/yii2-bootstrap5",
+    "name": "ziphp/bootstrap5",
     "description": "The Twitter Bootstrap v5 extension for the Yii framework",
     "keywords": [
         "yii2",
@@ -9,7 +9,7 @@
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
-        "source": "https://github.com/yiisoft/yii2-bootstrap5"
+        "source": "https://github.com/ziphp/bootstrap5"
     },
     "authors": [
         {
@@ -26,7 +26,7 @@
     "require": {
         "php": ">=7.0",
         "ext-json": "*",
-        "yiisoft/yii2": "^2.0.42",
+        "ziphp/ziphp": ">=5.0.0",
         "bower-asset/bootstrap": "^5.1.0"
     },
     "require-dev": {
@@ -39,7 +39,7 @@
     },
     "config": {
         "allow-plugins": {
-            "yiisoft/yii2-composer": true
+            "ziphp/zipper": true
         }
     },
     "repositories": [
