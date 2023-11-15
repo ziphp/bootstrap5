@@ -12,7 +12,7 @@ use yii\web\View;
  */
 class ToastTest extends TestCase
 {
-    public function testBodyOptions()
+    public function testBodyOptions(): void
     {
         Toast::$counter = 0;
         $out = Toast::widget([
@@ -37,7 +37,7 @@ HTML;
 
     /**
      */
-    public function testContainerOptions()
+    public function testContainerOptions(): void
     {
         Toast::$counter = 0;
 
@@ -67,7 +67,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testDateTimeOptions()
+    public function testDateTimeOptions(): void
     {
         Toast::$counter = 0;
         $out = Toast::widget([
@@ -93,7 +93,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testTitleOptions()
+    public function testTitleOptions(): void
     {
         Toast::$counter = 0;
         $out = Toast::widget([
@@ -120,7 +120,7 @@ HTML;
     /**
      * @see https://github.com/yiisoft/yii2-bootstrap5/issues/5
      */
-    public function testWidgetInitialization()
+    public function testWidgetInitialization(): void
     {
         Toast::$counter = 0;
         ob_start();
@@ -146,7 +146,7 @@ HTML;
     /**
      * @see https://github.com/yiisoft/yii2-bootstrap5/issues/36
      */
-    public function testWidgetNoInitialization()
+    public function testWidgetNoInitialization(): void
     {
         Toast::$counter = 0;
         ob_start();
@@ -163,7 +163,7 @@ HTML;
         $this->assertArrayHasKey(View::POS_READY, Yii::$app->view->js);
     }
 
-    public function testWidgetInitializationWithClientOptions()
+    public function testWidgetInitializationWithClientOptions(): void
     {
         Toast::$counter = 0;
         ob_start();

@@ -9,7 +9,7 @@ use yii\bootstrap5\Offcanvas;
  */
 class OffcanvasTest extends TestCase
 {
-    public function testBodyOptions()
+    public function testBodyOptions(): void
     {
         Offcanvas::$counter = 0;
         $out = Offcanvas::widget([
@@ -33,7 +33,7 @@ HTML;
 
     /**
      */
-    public function testOptions()
+    public function testOptions(): void
     {
         Offcanvas::$counter = 0;
 
@@ -70,7 +70,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testTriggerButton()
+    public function testTriggerButton(): void
     {
         Offcanvas::$counter = 0;
 

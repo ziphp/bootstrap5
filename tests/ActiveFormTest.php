@@ -15,7 +15,7 @@ use yiiunit\extensions\bootstrap5\data\User;
 class ActiveFormTest extends TestCase
 {
 
-    public function testDefaultLayout()
+    public function testDefaultLayout(): void
     {
         ActiveForm::$counter = 0;
         ob_start();
@@ -41,7 +41,7 @@ HTML;
         $this->assertContainsWithoutLE($expected, $out);
     }
 
-    public function testHorizontalLayout()
+    public function testHorizontalLayout(): void
     {
         Html::$counter = 0;
         ActiveForm::$counter = 0;
@@ -116,7 +116,7 @@ HTML;
 
     /**
      */
-    public function testHorizontalLayoutTemplateOverride()
+    public function testHorizontalLayoutTemplateOverride(): void
     {
         ActiveForm::$counter = 0;
         ob_start();
@@ -141,7 +141,7 @@ HTML;
         $this->assertContainsWithoutLE($expected, $out);
     }
 
-    public function testInlineLayout()
+    public function testInlineLayout(): void
     {
         ActiveForm::$counter = 0;
         ob_start();
@@ -198,7 +198,7 @@ HTML;
         $this->assertContainsWithoutLE($expected3, $out);
     }
 
-    public function testFloatingLayout()
+    public function testFloatingLayout(): void
     {
         ActiveForm::$counter = 0;
         ob_start();
@@ -255,7 +255,7 @@ HTML;
         $this->assertContainsWithoutLE($expected3, $out);
     }
 
-    public function testHintRendering()
+    public function testHintRendering(): void
     {
         ActiveForm::$counter = 0;
         ob_start();
@@ -310,7 +310,7 @@ HTML;
         $this->assertContainsWithoutLE($expected4, $out);
     }
 
-    public function testStaticControlRendering()
+    public function testStaticControlRendering(): void
     {
         ActiveForm::$counter = 0;
         ob_start();
@@ -366,7 +366,7 @@ HTML;
      * Fixes #128
      * @see https://github.com/yiisoft/yii2-bootstrap5/issues/128
      */
-    public function testInputTemplate()
+    public function testInputTemplate(): void
     {
         $model = new User();
         $model->validate();
@@ -393,14 +393,14 @@ HTML;
     /**
      * Fixes #196
      */
-    public function testFormNoRoleAttribute()
+    public function testFormNoRoleAttribute(): void
     {
         $form = ActiveForm::widget();
 
         $this->assertNotContains('role="form"', $form);
     }
 
-    public function testErrorSummaryRendering()
+    public function testErrorSummaryRendering(): void
     {
         ActiveForm::$counter = 0;
         ob_start();
@@ -418,7 +418,7 @@ HTML;
         $this->assertContainsWithoutLE('<div class="alert alert-danger"', $out);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         // dirty way to have Request object not throwing exception when running testFormNoRoleAttribute()
         $_SERVER['REQUEST_URI'] = "index.php";

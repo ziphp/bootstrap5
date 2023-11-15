@@ -28,7 +28,7 @@ class ActiveFieldDefaultFormCheckTest extends TestCase
      */
     private $_attributeName = 'attributeName';
 
-    public function testDefaultCheckboxByConfig()
+    public function testDefaultCheckboxByConfig(): void
     {
         Html::$counter = 0;
         $this->_activeField->inline = true;
@@ -47,7 +47,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testDefaultRadioByConfig()
+    public function testDefaultRadioByConfig(): void
     {
         Html::$counter = 0;
         $this->_activeField->inline = true;
@@ -66,7 +66,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testDefaultCheckboxListByConfig()
+    public function testDefaultCheckboxListByConfig(): void
     {
         Html::$counter = 0;
         $html = $this->_activeField->checkboxList([1 => 'name1', 2 => 'name2'])->render();
@@ -91,7 +91,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testDefaultRadioListByConfig()
+    public function testDefaultRadioListByConfig(): void
     {
         Html::$counter = 0;
         $html = $this->_activeField->radioList([1 => 'name1', 2 => 'name2'])->render();
@@ -116,7 +116,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testHorizontalLayout()
+    public function testHorizontalLayout(): void
     {
         Html::$counter = 0;
         ActiveForm::$counter = 0;
@@ -189,7 +189,7 @@ HTML;
         $this->assertContainsWithoutLE($expected3, $out);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         // dirty way to have Request object not throwing exception when running testHomeLinkNull()
         $_SERVER['SCRIPT_FILENAME'] = 'index.php';

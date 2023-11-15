@@ -11,7 +11,7 @@ use yii\bootstrap5\Breadcrumbs;
 
 class TranslationTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->mockWebApplication([
             'language' => 'de-CH',
@@ -30,7 +30,7 @@ class TranslationTest extends TestCase
         ]);
     }
 
-    public function testTranslatedAlert()
+    public function testTranslatedAlert(): void
     {
         Alert::$counter = 0;
         $html = Alert::widget([
@@ -52,7 +52,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testTranslatedBreadcrumb()
+    public function testTranslatedBreadcrumb(): void
     {
         Breadcrumbs::$counter = 0;
         $out = Breadcrumbs::widget([

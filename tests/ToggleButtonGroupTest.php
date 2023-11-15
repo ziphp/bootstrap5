@@ -11,7 +11,7 @@ use yii\bootstrap5\ToggleButtonGroup;
  */
 class ToggleButtonGroupTest extends TestCase
 {
-    public function testCheckbox()
+    public function testCheckbox(): void
     {
         Html::$counter = 0;
         $html = ToggleButtonGroup::widget([
@@ -35,7 +35,7 @@ HTML;
 
     /**
      */
-    public function testCheckboxChecked()
+    public function testCheckboxChecked(): void
     {
         Html::$counter = 0;
         $html = ToggleButtonGroup::widget([
@@ -51,7 +51,7 @@ HTML;
         $this->assertContains('<input type="checkbox" id="i1" class="btn-check" name="ToggleButtonGroupTestModel[value][]" value="2" checked autocomplete="off">', $html);
     }
 
-    public function testRadio()
+    public function testRadio(): void
     {
         Html::$counter = 0;
         $html = ToggleButtonGroup::widget([
@@ -75,7 +75,7 @@ HTML;
 
     /**
      */
-    public function testRadioChecked()
+    public function testRadioChecked(): void
     {
         Html::$counter = 0;
         $html = ToggleButtonGroup::widget([

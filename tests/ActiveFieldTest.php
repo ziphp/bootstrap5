@@ -26,7 +26,7 @@ class ActiveFieldTest extends TestCase
      */
     private $attributeName = 'attributeName';
 
-    public function testFileInput()
+    public function testFileInput(): void
     {
         $html = $this->activeField->fileInput()->render();
 
@@ -42,7 +42,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testRangeInput()
+    public function testRangeInput(): void
     {
         $html = $this->activeField->rangeInput()->render();
 
@@ -58,7 +58,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testColorInput()
+    public function testColorInput(): void
     {
         $html = $this->activeField->colorInput()->render();
 
@@ -74,7 +74,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testRadioList()
+    public function testRadioList(): void
     {
         $html = $this->activeField->radioList([1 => 'name1', 2 => 'name2'])->render();
 
@@ -100,7 +100,7 @@ HTML;
 
     // Tests :
 
-    public function testRadioError()
+    public function testRadioError(): void
     {
         $this->helperModel->addError($this->attributeName, 'Test print error message');
         $html = $this->activeField->radio()->render();
@@ -118,7 +118,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testRadioListError()
+    public function testRadioListError(): void
     {
         $this->helperModel->addError($this->attributeName, 'Test print error message');
         $html = $this->activeField->radioList([1 => 'name1', 2 => 'name2'])->render();
@@ -143,7 +143,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testCheckboxList()
+    public function testCheckboxList(): void
     {
         $html = $this->activeField->checkboxList([1 => 'name1', 2 => 'name2'])->render();
 
@@ -170,7 +170,7 @@ HTML;
     /**
      * @test checkbox
      */
-    public function testCheckboxSwitch()
+    public function testCheckboxSwitch(): void
     {
         $html = $this->activeField->checkbox(['switch' => true])->render();
 
@@ -187,7 +187,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testCheckboxError()
+    public function testCheckboxError(): void
     {
         $this->helperModel->addError($this->attributeName, 'Test print error message');
         $html = $this->activeField->checkbox()->render();
@@ -205,7 +205,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testCheckboxListError()
+    public function testCheckboxListError(): void
     {
         $this->helperModel->addError($this->attributeName, 'Test print error message');
         $html = $this->activeField->checkboxList([1 => 'name1', 2 => 'name2'])->render();
@@ -230,7 +230,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testRadioListInline()
+    public function testRadioListInline(): void
     {
         $this->activeField->inline = true;
         $html = $this->activeField->radioList([1 => 'name1', 2 => 'name2'])->render();
@@ -255,7 +255,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testCheckboxListInline()
+    public function testCheckboxListInline(): void
     {
         $this->activeField->inline = true;
         $html = $this->activeField->checkboxList([1 => 'name1', 2 => 'name2'])->render();
@@ -283,7 +283,7 @@ HTML;
     /**
      * @see https://github.com/yiisoft/yii2-bootstrap/issues/81
      */
-    public function testRadioListItemOptions()
+    public function testRadioListItemOptions(): void
     {
         $content = $this->activeField->radioList([1 => 'name1', 2 => 'name2'], [
             'itemOptions' => [
@@ -298,7 +298,7 @@ HTML;
      *
      * @see https://github.com/yiisoft/yii2-bootstrap/issues/81
      */
-    public function testCheckboxListItemOptions()
+    public function testCheckboxListItemOptions(): void
     {
         $content = $this->activeField->checkboxList([1 => 'name1', 2 => 'name2'], [
             'itemOptions' => [
@@ -309,7 +309,7 @@ HTML;
         $this->assertContains('data-attribute="test"', $content);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         // dirty way to have Request object not throwing exception when running testHomeLinkNull()
         $_SERVER['SCRIPT_FILENAME'] = "index.php";

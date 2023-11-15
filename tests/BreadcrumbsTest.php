@@ -9,7 +9,7 @@ use yii\bootstrap5\Breadcrumbs;
  */
 class BreadcrumbsTest extends TestCase
 {
-    public function testRender()
+    public function testRender(): void
     {
         Breadcrumbs::$counter = 0;
         $out = Breadcrumbs::widget([
@@ -29,7 +29,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testRenderWithoutHomeLink()
+    public function testRenderWithoutHomeLink(): void
     {
         Breadcrumbs::$counter = 0;
         $out = Breadcrumbs::widget([

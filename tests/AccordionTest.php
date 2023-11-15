@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
  */
 class AccordionTest extends TestCase
 {
-    public function testRender()
+    public function testRender(): void
     {
         Accordion::$counter = 0;
         $output = Accordion::widget([
@@ -115,7 +115,7 @@ HTML
             , $output);
     }
 
-    public function testLabelKeys()
+    public function testLabelKeys(): void
     {
         ob_start();
         $form = ActiveForm::begin(['action' => '/something']);
@@ -171,7 +171,7 @@ HTML
             , $output);
     }
 
-    public function testExpandOptions()
+    public function testExpandOptions(): void
     {
         Accordion::$counter = 0;
         $output = Accordion::widget([
@@ -217,7 +217,7 @@ HTML
      * @dataProvider invalidItemsProvider
      * @expectedException \yii\base\InvalidConfigException
      */
-    public function testMissingLabel($items)
+    public function testMissingLabel($items): void
     {
         Accordion::widget([
             'items' => $items,
@@ -227,7 +227,7 @@ HTML
     /**
      * @see https://github.com/yiisoft/yii2/issues/8357
      */
-    public function testRenderObject()
+    public function testRenderObject(): void
     {
         $template = ['template' => '{input}'];
         ob_start();
@@ -262,7 +262,7 @@ HTML
             , $output);
     }
 
-    public function testAutoCloseItems()
+    public function testAutoCloseItems(): void
     {
         $items = [
             [
@@ -288,7 +288,7 @@ HTML
 
     /**
      */
-    public function testItemToggleTag()
+    public function testItemToggleTag(): void
     {
         $items = [
             [

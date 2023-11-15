@@ -10,7 +10,7 @@ use yii\bootstrap5\Carousel;
  */
 class CarouselTest extends TestCase
 {
-    function testContainerOptions()
+    function testContainerOptions(): void
     {
         Carousel::$counter = 0;
         $out = Carousel::widget([
@@ -60,7 +60,7 @@ HTML;
 
     /**
      */
-    public function testCrossfade()
+    public function testCrossfade(): void
     {
         Carousel::$counter = 0;
         $out = Carousel::widget([

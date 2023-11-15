@@ -11,7 +11,7 @@ use yii\bootstrap5\Alert;
  */
 class AlertTest extends TestCase
 {
-    public function testNormalAlert()
+    public function testNormalAlert(): void
     {
         Alert::$counter = 0;
         $html = Alert::widget([
@@ -35,7 +35,7 @@ HTML;
 
     /**
      */
-    public function testDismissibleAlert()
+    public function testDismissibleAlert(): void
     {
         Alert::$counter = 0;
         $html = Alert::widget([
@@ -56,7 +56,7 @@ HTML;
     /**
      * @see https://github.com/yiisoft/yii2-bootstrap5/issues/11
      */
-    public function testDismissibleAlertCustomButton()
+    public function testDismissibleAlertCustomButton(): void
     {
         Alert::$counter = 0;
         $html = Alert::widget([

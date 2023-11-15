@@ -10,7 +10,7 @@ use yii\bootstrap5\ButtonGroup;
  */
 class ButtonGroupTest extends TestCase
 {
-    public function testContainerOptions()
+    public function testContainerOptions(): void
     {
         ButtonGroup::$counter = 0;
         $out = ButtonGroup::widget([

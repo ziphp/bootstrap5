@@ -12,7 +12,7 @@ use yii\helpers\Html;
  */
 class TabsTest extends TestCase
 {
-    public function testRoleTablist()
+    public function testRoleTablist(): void
     {
         Tabs::$counter = 0;
         $out = Tabs::widget([
@@ -36,7 +36,7 @@ class TabsTest extends TestCase
      *
      * @see https://github.com/yiisoft/yii2/issues/6150
      */
-    public function testIds()
+    public function testIds(): void
     {
         Tabs::$counter = 0;
         $out = Tabs::widget([
@@ -113,7 +113,7 @@ class TabsTest extends TestCase
         }
     }
 
-    public function testVisible()
+    public function testVisible(): void
     {
         Tabs::$counter = 0;
         $html = Tabs::widget([
@@ -147,7 +147,7 @@ class TabsTest extends TestCase
         $this->assertNotContains('Invisible External Link', $html);
     }
 
-    public function testDisabled()
+    public function testDisabled(): void
     {
         Tabs::$counter = 0;
         $html = Tabs::widget([
@@ -201,7 +201,7 @@ class TabsTest extends TestCase
         );
     }
 
-    public function testItem()
+    public function testItem(): void
     {
         $checkTag = 'article';
 
@@ -223,7 +223,7 @@ class TabsTest extends TestCase
         $this->assertContains('<' . $checkTag, $out);
     }
 
-    public function testTabContentOptions()
+    public function testTabContentOptions(): void
     {
         $checkAttribute = "test_attribute";
         $checkValue = "check_attribute";
@@ -244,7 +244,7 @@ class TabsTest extends TestCase
         $this->assertContains($checkValue, $out);
     }
 
-    public function testActivateFirstVisibleTab()
+    public function testActivateFirstVisibleTab(): void
     {
         $html = Tabs::widget([
             'id' => 'mytab',
@@ -284,7 +284,7 @@ class TabsTest extends TestCase
         );
     }
 
-    public function testActivateTab()
+    public function testActivateTab(): void
     {
         $html = Tabs::widget([
             'id' => 'mytab',
@@ -315,7 +315,7 @@ class TabsTest extends TestCase
         );
     }
 
-    public function testTabLabelEncoding()
+    public function testTabLabelEncoding(): void
     {
         $html = Tabs::widget([
             'encodeLabels' => false,
@@ -344,7 +344,7 @@ class TabsTest extends TestCase
     /**
      * @see https://github.com/yiisoft/yii2-bootstrap5/issues/108#issuecomment-465219339
      */
-    public function testIdRendering()
+    public function testIdRendering(): void
     {
         Tabs::$counter = 0;
         $html = Tabs::widget([
@@ -371,7 +371,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $html);
     }
 
-    public function testHeaderOptions()
+    public function testHeaderOptions(): void
     {
         Tabs::$counter = 0;
         $html = Tabs::widget([

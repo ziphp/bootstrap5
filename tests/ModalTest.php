@@ -10,7 +10,7 @@ use yii\bootstrap5\Modal;
  */
 class ModalTest extends TestCase
 {
-    public function testBodyOptions()
+    public function testBodyOptions(): void
     {
         Modal::$counter = 0;
         $out = Modal::widget([
@@ -39,7 +39,7 @@ HTML;
 
     /**
      */
-    public function testContainerOptions()
+    public function testContainerOptions(): void
     {
         Modal::$counter = 0;
 
@@ -85,7 +85,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testTriggerButton()
+    public function testTriggerButton(): void
     {
         Modal::$counter = 0;
 
@@ -114,7 +114,7 @@ HTML;
         );
     }
 
-    public function testDialogOptions()
+    public function testDialogOptions(): void
     {
         Modal::$counter = 0;
         $out = Modal::widget([
@@ -141,7 +141,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testCenterVertical()
+    public function testCenterVertical(): void
     {
         Modal::$counter = 0;
         $out = Modal::widget([
@@ -168,7 +168,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testScrollable()
+    public function testScrollable(): void
     {
         Modal::$counter = 0;
         $out = Modal::widget([

@@ -13,7 +13,7 @@ use yii\web\View;
  */
 class PopoverTest extends TestCase
 {
-    public function testButtonRender()
+    public function testButtonRender(): void
     {
         Popover::$counter = 0;
         $out = Popover::widget(['toggleButton' => ['class' => ['btn', 'btn-primary']]]);
@@ -25,7 +25,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testClientOptions()
+    public function testClientOptions(): void
     {
         Popover::$counter = 0;
         Popover::widget([
@@ -46,7 +46,7 @@ HTML;
         $this->assertContainsWithoutLE('"title":"Test Popover"', $options);
     }
 
-    public function testContent()
+    public function testContent(): void
     {
         Popover::$counter = 0;
         Popover::begin([]);

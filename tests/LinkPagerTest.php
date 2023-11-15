@@ -17,7 +17,7 @@ use yii\helpers\StringHelper;
  */
 class LinkPagerTest extends TestCase
 {
-    public function testFirstLastPageLabels()
+    public function testFirstLastPageLabels(): void
     {
         $pagination = $this->getPagination(5);
         $output = LinkPager::widget([
@@ -43,7 +43,7 @@ class LinkPagerTest extends TestCase
         $this->assertNotContains('<li class="page-item last">', $output);
     }
 
-    public function testDisabledPageElementOptions()
+    public function testDisabledPageElementOptions(): void
     {
         $output = LinkPager::widget([
             'pagination' => $this->getPagination(0),
@@ -54,7 +54,7 @@ class LinkPagerTest extends TestCase
 
     /**
      */
-    public function testOverrideDisabledPageElementOptions()
+    public function testOverrideDisabledPageElementOptions(): void
     {
         $output = LinkPager::widget([
             'pagination' => $this->getPagination(0),
@@ -63,7 +63,7 @@ class LinkPagerTest extends TestCase
         $this->assertContains('<li class="page-item prev disabled"><a class="foo-bar"', $output);
     }
 
-    public function testDisableCurrentPageButton()
+    public function testDisableCurrentPageButton(): void
     {
         $pagination = $this->getPagination(5);
         $output = LinkPager::widget([
@@ -78,7 +78,7 @@ class LinkPagerTest extends TestCase
         $this->assertContains('<li class="page-item active disabled" aria-current="page"><a class="page-link" href="/?r=test&amp;page=6" data-page="5" tabindex="-1">6</a></li>', $output);
     }
 
-    public function testOptionsWithTagOption()
+    public function testOptionsWithTagOption(): void
     {
         LinkPager::$counter = 0;
         $output = LinkPager::widget([
@@ -91,7 +91,7 @@ class LinkPagerTest extends TestCase
         $this->assertTrue(StringHelper::endsWith($output, '</div>'));
     }
 
-    public function testLinkWrapOptions()
+    public function testLinkWrapOptions(): void
     {
         $output = LinkPager::widget([
             'pagination' => $this->getPagination(1),
@@ -113,19 +113,19 @@ class LinkPagerTest extends TestCase
     /**
      * @see https://github.com/yiisoft/yii2/issues/15536
      */
-    public function testShouldTriggerInitEvent()
+    public function testShouldTriggerInitEvent(): void
     {
         $initTriggered = false;
         LinkPager::widget([
             'pagination' => $this->getPagination(1),
-            'on init' => function () use (&$initTriggered) {
+            'on init' => function () use (&$initTriggered): void {
                 $initTriggered = true;
             }
         ]);
         $this->assertTrue($initTriggered);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->mockWebApplication([
